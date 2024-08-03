@@ -10,7 +10,8 @@
       placeholder="Search for Ingredients"
     />
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-      <a href="#"
+      <a
+        href="#"
         @click.prevent="openIngredient(ingredient)"
         v-for="ingredient of computedIngredients"
         :key="ingredient.idIngredient"
@@ -26,7 +27,7 @@
 import { computed } from "@vue/reactivity";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
-import axiosClient from "../axiosClient";
+import axiosClient from "../AxiosClient";
 import store from "../store";
 
 const router = useRouter();
@@ -40,7 +41,7 @@ const computedIngredients = computed(() => {
 });
 
 function openIngredient(ingredient) {
-  store.commit('setIngredient', ingredient)
+  store.commit("setIngredient", ingredient);
   router.push({
     name: "byIngredient",
     params: { ingredient: ingredient.strIngredient },
@@ -53,3 +54,9 @@ onMounted(() => {
   });
 });
 </script>
+
+<style scoped lang="css">
+div {
+  color: black;
+}
+</style>

@@ -13,8 +13,8 @@
       @keyup.enter="searchMeals"
     />
   </div>
-  <pre>{{ meals }}</pre>
-  <!-- <Meals :meals="meals" /> -->
+  <!-- <pre>{{ meals }}</pre> -->
+  <Meals :meals="meals" />
 </template>
 
 <script setup>
@@ -22,6 +22,7 @@ import { computed } from "vue";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import store from "../store";
+import Meals from "../components/Meals.vue";
 
 const route = useRoute();
 const keyword = ref("");
