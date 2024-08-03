@@ -1,29 +1,33 @@
 <template>
-  <header class="bg-black flex justify-between items-stretch">
-    <router-link :to="{ name: 'home' }">Home</router-link>
-    <div class="flex items-center gap-1">
+  <header
+    class="fixed w-full z-10 mb-15 bg-black flex justify-between items-center p-4"
+  >
+    <router-link :to="{ name: 'home' }" class="text-white text-xl font-bold">
+      Home
+    </router-link>
+    <nav class="flex gap-4">
       <router-link
         :to="{ name: 'byName' }"
-        class="inline-flex items-center px-2 h-full transition-colors hover:bg-blue-600"
+        class="text-white px-4 py-2 rounded transition-colors hover:bg-blue-600"
       >
         Search Meals
       </router-link>
       <router-link
         :to="{ name: 'byLetter' }"
-        class="inline-flex items-center px-2 h-full transition-colors hover:bg-blue-600"
+        class="text-white px-4 py-2 rounded transition-colors hover:bg-blue-600"
       >
         Meals By Letter
       </router-link>
       <router-link
-        :to="{ name: 'byIngredient' }"
-        class="inline-flex items-center px-2 h-full transition-colors hover:bg-blue-600"
+        :to="{ name: 'ingredients' }"
+        class="text-white px-4 py-2 rounded transition-colors hover:bg-blue-600"
       >
         Meals By Ingredients
       </router-link>
-    </div>
+    </nav>
   </header>
 </template>
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped></style>
